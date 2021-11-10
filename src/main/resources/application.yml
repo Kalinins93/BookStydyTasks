@@ -1,0 +1,9 @@
+server:
+  port: 8081
+liquibase:
+  enabled: false
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    contexts: dev
