@@ -1,9 +1,19 @@
 server:
   port: 8081
-liquibase:
-  enabled: false
-spring:
-  liquibase:
-    enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.yaml
-    contexts: dev
+
+spring.liquibase.enabled: true
+spring.liquibase.change-log: classpath:db/db.changelog-master.yaml
+spring.liquibase.contexts: dev
+#  jpa:
+#     hibernate:
+#         ddl-auto: create-drop
+#
+    # Oracle settings
+
+spring.datasource:
+     url: 'jdbc:oracle:thin:@localhost:1521/ORCLPDB1'
+     username: INFRA
+     password: momS51tsmu
+     driver-class-oracle:
+      jdbc:
+       driver: OracleDriver

@@ -1,22 +1,8 @@
 databaseChangeLog:
-  - changeSet:
-      id: 1596784098744-2
-      author: myluc (generated)
-      changes:
-        - loadData:
-            columns:
-              - column:
-                  header: id
-                  name: id
-                  type: NUMERIC
-              - column:
-                  header: name
-                  name: name
-                  type: STRING
-            commentLineStartsWith: '#'
-            encoding: UTF-8
-            file: data/animal.csv
-            quotchar: '"'
-            separator: ','
-            relativeToChangelogFile: true
-            tableName: animal
+ - changeSet:
+    id: 159678409834744-2
+    author: myluc (generated)
+    changes:
+        - sql:
+            sql: insert into animal values (223,'Alisa','Dog')
+    comment: Add animal!

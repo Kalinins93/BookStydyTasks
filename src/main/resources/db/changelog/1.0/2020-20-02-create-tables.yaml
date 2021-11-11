@@ -1,18 +1,8 @@
 databaseChangeLog:
   - changeSet:
-      id: 1596784098744-1
-      author: myluc (generated)
+      id: 15967840934-2
+      author: ilia
       changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: animal_pkey
-                  name: id
-                  type: BIGINT
-              - column:
-                  name: name
-                  type: VARCHAR(255)
-            tableName: animal
+        - sql:
+            sql: Drop table animal; Create table animal (AnimalID int, NameAnimal varchar(255),ClassAnimal varchar(255))
+      comment: Add animal!
