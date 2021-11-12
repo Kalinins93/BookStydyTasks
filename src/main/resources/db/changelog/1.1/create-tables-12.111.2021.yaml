@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 12.11.2021-12-06-15-09
+      author: ilia
+      changes:
+        - sql:
+            sql: Drop table team; Drop table player;  Create table player (id int  PRIMARY KEY not null,name varchar(255),num int, position varchar(255)); Create table team (id int PRIMARY KEY not null, name varchar(255), players int not null,  CONSTRAINT player  FOREIGN KEY (players) REFERENCES player(id));
+      comment: Add animal!
