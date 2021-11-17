@@ -25,18 +25,18 @@ public class GreetingController {
     }
     @GetMapping("/test")
     public String test(@RequestParam(name="name", required=false, defaultValue="dsfsdf") String name, Model model) {
-      //  try{
+        try{
         Player player= this.servicePlayer.findPlayerByID(Integer.parseInt(name));
         Team team=this.servicePlayer.findTeamByPlayers(player);
         name=player.getName()+"playning by team -"+team.getName();
         logger.info("Runtume"+name);
         model.addAttribute("name",name);
         return "greeting";
-     /*   }
+       }
         catch (Exception e){
             model.addAttribute("name","Error invoke DB"+e.toString());
             return "greeting";
-        }*/
+        }
     }
 
 }
