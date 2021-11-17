@@ -3,7 +3,9 @@ package org.example.services;
 import lombok.Setter;
 import org.example.dao.PlayerDao;
 import org.example.dao.PlayerDaoImpl;
+import org.example.dao.TeamDao;
 import org.example.model.Player;
+import org.example.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.List;
 public class ServicePlayerImpl implements ServicePlayer {
     @Autowired
     private PlayerDao playerDAO;
+    @Autowired
+    private TeamDao teamDao;
     @Override
     public Player findPlayerByID(int id) {
         Player player = this.playerDAO.findPlayerByID(id);
@@ -38,5 +42,11 @@ public class ServicePlayerImpl implements ServicePlayer {
     public List<Player> listPlayers() {
 
         return this.playerDAO.listPlayers();
+    }
+
+    @Override
+    public Team findTeamByPlayers(Player player) {
+
+        return this.teamDao.findByPlayers(player);
     }
 }

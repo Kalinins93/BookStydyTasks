@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.model.Player;
+import org.example.model.Team;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface ServicePlayer  {
     public void removePlayer(int id);
 
     public List<Player> listPlayers();
+    public Team findTeamByPlayers(Player player);
 }

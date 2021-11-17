@@ -1,5 +1,7 @@
 package org.example.Controllers;
 
+import org.example.model.Player;
+import org.example.model.Team;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.example.services.ServicePlayer;
@@ -24,8 +26,9 @@ public class GreetingController {
     @GetMapping("/test")
     public String test(@RequestParam(name="name", required=false, defaultValue="dsfsdf") String name, Model model) {
       //  try{
-        name=this.servicePlayer.findPlayerByID(1).getName();
-        logger.info("Runtume"+this.servicePlayer);
+        Player player= this.servicePlayer.findPlayerByID(Integer.parseInt(name));
+        Team team=this.servicePlayer.findTeamByPlayers(player);
+        name=player.getName()+"playning by team -"+team.getName();
         logger.info("Runtume"+name);
         model.addAttribute("name",name);
         return "greeting";
