@@ -1,30 +1,17 @@
 package org.example;
 
-import org.example.services.SoccerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.List;
-
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
-public class ServingWebContentApplication  implements CommandLineRunner {
+@ComponentScan("org.example")
+public class ServingWebContentApplication   {
 
-        @Autowired
-        SoccerService soccerService;
         public static void main(String[] args) {
                 SpringApplication.run(ServingWebContentApplication.class, args);
-        }
-        @Override
-        public void run(String... arg0) throws Exception {
-
-                soccerService.addBarcelonaPlayer("Xavi Hernandez", "Midfielder", 6);
-
-                List<String> players = soccerService.getAllTeamPlayers(1);
-                for(String player : players)
-                {
-                        System.out.println("Introducing Barca player => " + player);
-                }
         }
 }

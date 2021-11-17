@@ -4,5 +4,11 @@ databaseChangeLog:
     author: myluc (generated)
     changes:
         - sql:
-            sql: insert into animal values (223,'Alisa','Dog')
+            sql: insert into Team (id,name) values(1,'Barcelona');
+        - sql:
+            sql: insert into Player (id,  name, num, position) values(1,'Lionel Messi', 10, 'Forward');
+        - sql:
+            sql: insert into Player (id,  name, num, position) values(2,'Andreas Inniesta', 8, 'Midfielder');
+        - sql:
+            sql:  insert into Player (id,  name, num, position) values(3,'Pique', 3, 'Defender');
     comment: Add animal!

@@ -1,8 +1,14 @@
 databaseChangeLog:
   - changeSet:
-      id: 12.11.2021-12-06-15-09
+      id: 12.11.2021-12-06-15-09-34
       author: ilia
       changes:
         - sql:
-            sql: Drop table team; Drop table player;  Create table player (id int  PRIMARY KEY not null,name varchar(255),num int, position varchar(255)); Create table team (id int PRIMARY KEY not null, name varchar(255), players int not null,  CONSTRAINT player  FOREIGN KEY (players) REFERENCES player(id));
-      comment: Add animal!
+            sql: Create SEQUENCE PLAYER_SEQ;
+        - sql:
+            sql: Create SEQUENCE TEAM_SEQ;
+        - sql:
+            sql: Create table team (id Integer PRIMARY KEY not null, name varchar(255));
+        - sql:
+            sql:  create table PLAYER (id number(10,0) not null, name varchar2(255 char), num number(10,0), position varchar2(255 char), primary key (id))
+      comment: Add players and teams!
