@@ -16,5 +16,6 @@ public interface ServicePlayer  {
     public void removePlayer(int id);
 
     public List<Player> listPlayers();
-    public Team findTeamByPlayers(Player player);
+    public List<Player> findPlayersByTeam(Team team);
+    public Team findTeamByID(int id);
 }

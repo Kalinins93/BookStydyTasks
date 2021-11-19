@@ -51,10 +51,8 @@ public class PlayerDaoImpl implements  PlayerDao{
         @SuppressWarnings("unchecked")
          public List<Player> listPlayers() {
         Session session =this.sessionFactory.getCurrentSession();
-        List<Player> players =session.createQuery("SELECT * FROM PLAYER").list();
-            for(Player player: players){
-                logger.info("Player list: " + player);
-            }
+        List<Player> players =session.createSQLQuery("select * from PLAYER").addEntity(Player.class).list();
+
         return players;
     }
 }

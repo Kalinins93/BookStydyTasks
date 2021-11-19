@@ -1,15 +1,12 @@
 package org.example.services;
 
-import lombok.Setter;
 import org.example.dao.PlayerDao;
-import org.example.dao.PlayerDaoImpl;
 import org.example.dao.TeamDao;
 import org.example.model.Player;
 import org.example.model.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 @Service
 public class ServicePlayerImpl implements ServicePlayer {
@@ -45,8 +42,13 @@ public class ServicePlayerImpl implements ServicePlayer {
     }
 
     @Override
-    public Team findTeamByPlayers(Player player) {
+    public List<Player> findPlayersByTeam(Team team) {
 
-        return this.teamDao.findByPlayers(player);
+        return this.teamDao.findByPlayers(team);
+    }
+
+    @Override
+    public Team findTeamByID(int id) {
+        return this.teamDao.findTeamById(id);
     }
 }
