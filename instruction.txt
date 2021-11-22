@@ -1,0 +1,6 @@
+1-Build docker image executed command
+install maven project
+cd [path project]
+docker build .
+2 Run container
+docker run --name [name-container] --mount type=bind,source=[path/application.yml],target=/usr/src/my_app_directory/conf/application.yml  -p 127.0.0.1:[container port]:[host port]

@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring.liquibase.enabled: true
 spring.liquibase.change-log: classpath:db/db.changelog-master.yaml
@@ -7,7 +7,7 @@ spring.liquibase.contexts: dev
 spring.jpa.hibernate.ddl-auto: update
 spring.jpa.hibernate.show_sql: true
 spring.datasource:
-     url: 'jdbc:oracle:thin:52f474e93332@:1521/ORCLPDB1'
+     url: 'jdbc:oracle:thin:@172.17.0.2:1521/ORCLPDB1'
      username: INFRA
      password: momS51tsmu
      driver-class-oracle:

@@ -17,9 +17,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 ##
 RUN mkdir /usr/src/my_app_directory
+RUN mkdir /usr/src/my_app_directory/conf
 WORKDIR /usr/src/my_app_directory
 
-COPY  BookStydyTasks-1.0-SNAPSHOT.jar /usr/src/my_app_directory
-COPY  /home/ilia/Documents/BookStydyTasks/src/main/resources/application.yml /usr/src/my_app_directory
-ENTRYPOINT ["java", "-jar","BookStydyTasks-1.0-SNAPSHOT.jar", "--spring.config.location=file:///application.yml"]
-EXPOSE 8081
+COPY  target/BookStydyTasks-1.0-SNAPSHOT.jar /usr/src/my_app_directory
+COPY  src/main/resources/application.yml /usr/src/my_app_directory
+ENTRYPOINT ["java", "-jar","BookStydyTasks-1.0-SNAPSHOT.jar","--spring.config.location=file:///usr/src/my_app_directory/conf/application.yml"]
