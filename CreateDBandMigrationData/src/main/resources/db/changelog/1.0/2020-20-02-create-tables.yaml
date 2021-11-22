@@ -4,5 +4,5 @@ databaseChangeLog:
       author: ilia
       changes:
         - sql:
-            sql: Drop table animal; Create table animal (AnimalID int, NameAnimal varchar(255),ClassAnimal varchar(255))
+            sql: Create table TEAM(id Integer PRIMARY KEY not null, name varchar(255));
       comment: Add animal!

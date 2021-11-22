@@ -1,9 +1,5 @@
 server:
   port: 8082
-
-spring.liquibase.enabled: true
-spring.liquibase.change-log: classpath:db/db.changelog-master.yaml
-spring.liquibase.contexts: dev
 spring.jpa.hibernate.ddl-auto: update
 spring.jpa.hibernate.show_sql: true
 spring.datasource:
