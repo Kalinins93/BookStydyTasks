@@ -10,6 +10,7 @@
     <modules>
         <module>WebRestInDBOracle</module>
         <module>CreateDBandMigrationData</module>
+        <module>KafkaTestApp</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
